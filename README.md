@@ -18,3 +18,26 @@ This project applies both rule sets to the same 30 compounds (15 approved drugs 
 
 3. Two of the fifteen drugs fail Lipinski's Rule of 5. Atorvastatin (MW 559, cLogP 6.3) breaks both the weight and lipophilicity limits, yet is one of the best-selling pharmaceuticals ever synthesised. Cyclosporin fails on size and hydrogen-bond count at MW 1203, and is a clinically essential immunosuppressant. In the other direction, lambda-cyhalothrin passes despite a cLogP of 6.5, because its molecular weight (450) and absence of hydrogen-bond donors keep it to a single violation — and one violation is tolerated. The rule is a statistical observation about orally absorbed compounds, not a criterion any individual molecule must satisfy.
 
+**How to run**
+Create the environment and install the dependencies:
+conda env create -f environment.yml
+conda activate chemscreen
+
+Then run the pipeline in order:
+python fetch.py      # data/compounds.csv            -> data/compounds_with_smiles.csv
+python analyse.py    # data/compounds_with_smiles.csv -> results/screening_results.csv
+python figures.py    # results/screening_results.csv  -> results/*.png
+
+fetch.py requires an internet connection for the PubChem lookups. Everything after that runs offline.
+
+**Environment notes**
+Building a working environment on Windows proved to be a substantial part of this project, and the diagnosis is worth recording:
+1. Creating a figure (plt.subplots()) killed the Jupyter kernel with no Python error, while matplotlib imported cleanly and the same code ran without issue from the terminal. The fault was isolated by running matplotlib outside the notebook, which succeeded.
+2. RDKit's drawing module failed separately with ImportError: DLL load failed while importing rdMolDraw2D, despite rdkit and librdkit being matched conda-forge builds (2026.09.2). This indicates a missing system-level dependency rather than a version mismatch.
+3. As a result, figure generation and structure rendering currently run in separate conda environments. Resolving this to a single reproducible environment is outstanding.
+
+**References**
+1. Lipinski, C. A. et al. Adv. Drug Deliv. Rev. 1997, 23, 3–25.
+2. Veber, D. F. et al. J. Med. Chem. 2002, 45, 2615–2623.
+3. Tice, C. M. Pest Manag. Sci. 2001, 57, 3–16.
+4. Baell, J. B.; Holloway, G. A. J. Med. Chem. 2010, 53, 2719–2740. (PAINS)
