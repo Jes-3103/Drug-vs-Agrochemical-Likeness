@@ -1,0 +1,31 @@
+,name,category,smiles,MW,LogP,HBD,HBA,TPSA,RotB,Ro5_violations,Lipinski_pass,Ro5_reasons,Veber_pass,PAINS_alert,Tice_herb_viol,Tice_ins_viol,Tice_herb_pass,Tice_ins_pass,Tice_herb_reasons,Tice_ins_reasons
+0,aspirin,drug,CC(=O)OC1=CC=CC=C1C(=O)O,180.16,1.31,1,3,63.6,2,0,True,,True,,0,0,True,True,,
+1,ibuprofen,drug,CC(C)CC1=CC=C(C=C1)C(C)C(=O)O,206.28,3.07,1,1,37.3,4,0,True,,True,,1,0,False,True,HBA 1 outside 2-12,
+2,paracetamol,drug,CC(=O)NC1=CC=C(C=C1)O,151.16,1.35,2,2,49.33,1,0,True,,True,,0,0,True,True,,
+3,atorvastatin,drug,CC(C)C1=C(C(=C(N1CC[C@H](C[C@H](CC(=O)O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4,558.65,6.31,4,4,111.79,12,2,False,MW 559 > 500;LogP 6.3 >5,False,,4,4,False,False,MW 559 outside 150-500; LogP 6.3 > 3.5; HBD 4 > 3; RotB 12 >= 12,MW 559 outside 150-500; LogP 6.3 outside 0-5; HBD 4 > 2; RotB 12 >= 12
+4,cyclosporin,drug,CC[C@H]1C(=O)N(CC(=O)N([C@H](C(=O)N[C@H](C(=O)N([C@H](C(=O)N[C@H](C(=O)N[C@@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N([C@H](C(=O)N1)[C@@H]([C@H](C)C/C=C/C)O)C)C(C)C)C)CC(C)C)C)CC(C)C)C)C)C)CC(C)C)C)C(C)C)CC(C)C)C)C,1202.63,3.27,5,12,278.8,15,2,False,MW 1203 > 500;HBA 12 >10,False,,3,4,False,False,MW 1203 outside 150-500; HBD 5 > 3; RotB 15 >= 12,MW 1203 outside 150-500; HBD 5 > 2; HBA 12 outside 1-8; RotB 15 >= 12
+5,metformin,drug,CN(C)C(=N)N=C(N)N,129.17,-1.24,3,1,91.49,0,0,True,,True,,2,3,False,False,MW 129 outside 150-500; HBA 1 outside 2-12,MW 129 outside 150-500; LogP -1.2 outside 0-5; HBD 3 > 2
+6,omeprazole,drug,CC1=CN=C(C(=C1OC)C)CS(=O)C2=NC3=C(N2)C=C(C=C3)OC,345.42,2.9,1,5,77.1,5,0,True,,True,,0,0,True,True,,
+7,sildenafil,drug,CCCC1=NN(C2=C1N=C(NC2=O)C3=C(C=CC(=C3)S(=O)(=O)N4CCN(CC4)C)OCC)C,474.59,1.61,1,7,113.42,7,0,True,,True,,0,0,True,True,,
+8,diazepam,drug,CN1C(=O)CN=C(C2=C1C=CC(=C2)Cl)C3=CC=CC=C3,284.75,3.15,0,2,32.67,1,0,True,,True,,0,0,True,True,,
+9,ciprofloxacin,drug,C1CC1N2C=C(C(=O)C3=CC(=C(C=C32)N4CCNCC4)F)C(=O)O,331.35,1.58,2,4,74.57,3,0,True,,True,,0,0,True,True,,
+10,amoxicillin,drug,CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C,365.41,0.02,4,6,132.96,4,0,True,,True,,1,1,False,False,HBD 4 > 3,HBD 4 > 2
+11,imatinib,drug,CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5,493.62,4.59,2,7,86.28,7,0,True,,True,,1,0,False,True,LogP 4.6 > 3.5,
+12,warfarin,drug,CC(=O)CC(C1=CC=CC=C1)C2=C(C3=CC=CC=C3OC2=O)O,308.33,3.61,1,4,67.51,4,0,True,,True,,1,0,False,True,LogP 3.6 > 3.5,
+13,propranolol,drug,CC(C)NCC(COC1=CC=CC2=CC=CC=C21)O,259.35,2.58,2,3,41.49,6,0,True,,True,,0,0,True,True,,
+14,loratadine,drug,CCOC(=O)N1CCC(=C2C3=C(CCC4=C2N=CC=C4)C=C(C=C3)Cl)CC1,382.89,4.89,0,3,42.43,1,0,True,,True,,1,0,False,True,LogP 4.9 > 3.5,
+15,azoxystrobin,agrochemical,CO/C=C(\C1=CC=CC=C1OC2=NC=NC(=C2)OC3=CC=CC=C3C#N)/C(=O)OC,403.39,4.09,0,8,103.56,7,0,True,,True,,1,0,False,True,LogP 4.1 > 3.5,
+16,glyphosate,agrochemical,C(C(=O)O)NCP(=O)(O)O,169.07,-1.2,4,3,106.86,4,0,True,,True,,1,2,False,False,HBD 4 > 3,LogP -1.2 outside 0-5; HBD 4 > 2
+17,atrazine,agrochemical,CCNC1=NC(=NC(=N1)Cl)NC(C)C,215.69,1.78,2,5,62.73,4,0,True,,True,,0,0,True,True,,
+18,thiamethoxam,agrochemical,CN\1COCN(/C1=N/[N+](=O)[O-])CC2=CN=C(S2)Cl,291.72,1.02,0,5,84.1,3,0,True,,True,,0,0,True,True,,
+19,mesotrione,agrochemical,CS(=O)(=O)C1=CC(=C(C=C1)C(=O)C2C(=O)CCCC2=O)[N+](=O)[O-],339.33,1.12,0,7,128.49,4,0,True,,True,,0,0,True,True,,
+20,lambda-cyhalothrin,agrochemical,CC1([C@@H]([C@@H]1C(=O)O[C@@H](C#N)C2=CC(=CC=C2)OC3=CC=CC=C3)/C=C(/C(F)(F)F)\Cl)C,449.86,6.54,0,4,59.32,6,1,True,LogP 6.5 >5,True,,1,1,False,False,LogP 6.5 > 3.5,LogP 6.5 outside 0-5
+21,difenoconazole,agrochemical,CC1COC(O1)(CN2C=NC=N2)C3=C(C=C(C=C3)OC4=CC=C(C=C4)Cl)Cl,406.27,4.67,0,5,58.4,5,0,True,,True,,1,0,False,True,LogP 4.7 > 3.5,
+22,fludioxonil,agrochemical,C1=CC(=C2C(=C1)OC(O2)(F)F)C3=CNC=C3C#N,248.19,2.87,1,3,58.04,1,0,True,,True,,0,0,True,True,,
+23,metolachlor,agrochemical,CCC1=CC=CC(=C1N(C(C)COC)C(=O)CCl)C,283.8,3.16,0,2,29.54,6,0,True,,True,,0,0,True,True,,
+24,imidacloprid,agrochemical,C1CN(/C(=N/[N+](=O)[O-])/N1)CC2=CN=C(C=C2)Cl,255.66,0.69,1,3,83.66,3,0,True,,True,,0,0,True,True,,
+25,chlorantraniliprole,agrochemical,CC1=CC(=CC(=C1NC(=O)C2=CC(=NN2C3=C(C=CC=N3)Cl)Br)C(=O)NC)Cl,483.15,4.26,2,4,88.91,4,0,True,,True,,1,0,False,True,LogP 4.3 > 3.5,
+26,tebuconazole,agrochemical,CC(C)(C)C(CCC1=CC=C(C=C1)Cl)(CN2C=NC=N2)O,307.82,3.34,1,3,50.94,5,0,True,,True,,0,0,True,True,,
+27,dicamba,agrochemical,COC1=C(C=CC(=C1C(=O)O)Cl)Cl,221.04,2.7,1,2,46.53,2,0,True,,True,,0,0,True,True,,
+28,glufosinate,agrochemical,CP(=O)(CCC(C(=O)O)N)O,181.13,-0.31,3,3,100.62,4,0,True,,True,,0,2,True,False,,LogP -0.3 outside 0-5; HBD 3 > 2
+29,pymetrozine,agrochemical,CC1=NNC(=O)N(C1)/N=C/C2=CN=CC=C2,217.23,0.82,1,4,69.95,2,0,True,,True,,0,0,True,True,,
