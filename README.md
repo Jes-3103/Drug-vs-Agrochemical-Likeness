@@ -1,7 +1,7 @@
 # Drug-vs-Agrochemical-Likeness
 Python/RDKit screening of drugs vs. agrochemicals against Lipinski, Veber, Tice and PAINS filters
 
-**Overview**
+## Overview
 Medicinal and agrochemical discovery both use rule-based filters to decide which compounds are worth screening. The best known is Lipinski's Rule of 5, derived from orally active pharmaceuticals and Tice´s rules later proposed an equivalent set for herbicides and insecticides.
 This project applies both rule sets to the same 30 compounds (15 approved drugs and 15 commercial agrochemicals) and asks a simple question- do these filters actually distinguish the two classes?
 
