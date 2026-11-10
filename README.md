@@ -30,6 +30,14 @@ python figures.py    # results/screening_results.csv  -> results/*.png
 
 fetch.py requires an internet connection for the PubChem lookups. Everything after that runs offline.
 
+## Limitations
+cLogP is calculated, not measured. RDKit uses the Wildman–Crippen atom-contribution method. Several compounds in the set (glyphosate, glufosinate, dicamba) are ionisable, so their behaviour at physiological or soil pH is better described by logD than logP.
+Tice's criteria were defined using MLogP (Moriguchi), not Crippen cLogP. The two methods can differ by more than a log unit, so compounds near the 3.5 boundary may be classified differently here than in the original paper.
+H-bond counts use RDKit's modern pattern-based definitions. Lipinski's original paper simply counted N + O atoms and NH + OH groups (Lipinski.NOCount and Lipinski.NHOHCount), which gives different values for some compounds.
+TPSA counts only N and O by default, so the phosphorus in glyphosate and glufosinate contributes nothing. CalcTPSA(mol, includeSandP=True) includes it.
+n = 30. This is a proof of concept. Statistically meaningful comparisons would require a few hundred to a few thousand compounds from ChEMBL.
+
+
 ## Environment notes
 Building a working environment on Windows proved to be a substantial part of this project, and the diagnosis is worth recording:
 1. Creating a figure (plt.subplots()) killed the Jupyter kernel with no Python error, while matplotlib imported cleanly and the same code ran without issue from the terminal. The fault was isolated by running matplotlib outside the notebook, which succeeded.
