@@ -48,4 +48,4 @@ Building a working environment on Windows proved to be a substantial part of thi
 1. Lipinski, C. A. et al. Adv. Drug Deliv. Rev. 1997, 23, 3–25.
 2. Veber, D. F. et al. J. Med. Chem. 2002, 45, 2615–2623.
 3. Tice, C. M. Pest Manag. Sci. 2001, 57, 3–16.
-4. Baell, J. B.; Holloway, G. A. J. Med. Chem. 2010, 53, 2719–2740. (PAINS)
+4. Baell, J. B.; Holloway, G. A. J. Med. Chem. 2010, 53, 2719–2740.
