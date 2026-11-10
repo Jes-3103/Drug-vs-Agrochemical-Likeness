@@ -5,20 +5,20 @@ Python/RDKit screening of drugs vs. agrochemicals against Lipinski, Veber, Tice 
 Medicinal and agrochemical discovery both use rule-based filters to decide which compounds are worth screening. The best known is Lipinski's Rule of 5, derived from orally active pharmaceuticals and Tice´s rules later proposed an equivalent set for herbicides and insecticides.
 This project applies both rule sets to the same 30 compounds (15 approved drugs and 15 commercial agrochemicals) and asks a simple question- do these filters actually distinguish the two classes?
 
-**The pipeline:**
+## The pipeline:
 1. Fetches canonical SMILES from PubChem by compound name
 2. Calculates MW, cLogP, H-bond donors and acceptors, TPSA and rotatable bonds with RDKit
 3. Applies Lipinski's Rule of 5, Veber's rules, Tice's agrochemical criteria and the PAINS substructure filter
 4. Produces a results table and figures comparing the two classes
 
-**Results**
+## Results
 1. A plot of MW vs logP shows that agrochemicals occupy a smaller, less polar region than drugs. Mean molecular weight between the two categories differ by about 80 g/mol and mean TPSA by about 11 Å², while lipophilicity is essentially identical. Agrochemicals must cross waxy plant and insect cuticles, which favours smaller, less polar molecules, whereas orally administered drugs can tolerate more size and polarity. So this is consistent with their different uptake routes.
 
 2. The agrochemicals pass the drug rule more often than the drugs do. This is because every Lipinski criterion is an upper limit, so small, simple molecules pass easily. On the other hand, Tice's criteria are harder for both classes because they are two-sided. Several of Tice's criteria are ranges, so a compound can fail for being too small or too polar as well as too large. Both classes therefore score lower against Tice than against Lipinski. Neither rule set works as a classifier. These rules describe where known actives have historically been found; they were never designed to discriminate between classes. PAINS filters are designed for screening libraries rather than marketed products; applying them here was a check on the method
 
 3. Two of the fifteen drugs fail Lipinski's Rule of 5. Atorvastatin (MW 559, cLogP 6.3) breaks both the weight and lipophilicity limits, yet is one of the best-selling pharmaceuticals ever synthesised. Cyclosporin fails on size and hydrogen-bond count at MW 1203, and is a clinically essential immunosuppressant. In the other direction, lambda-cyhalothrin passes despite a cLogP of 6.5, because its molecular weight (450) and absence of hydrogen-bond donors keep it to a single violation — and one violation is tolerated. The rule is a statistical observation about orally absorbed compounds, not a criterion any individual molecule must satisfy.
 
-**How to run**
+## How to run
 Create the environment and install the dependencies:
 conda env create -f environment.yml
 conda activate chemscreen
@@ -30,13 +30,13 @@ python figures.py    # results/screening_results.csv  -> results/*.png
 
 fetch.py requires an internet connection for the PubChem lookups. Everything after that runs offline.
 
-**Environment notes**
+## Environment notes
 Building a working environment on Windows proved to be a substantial part of this project, and the diagnosis is worth recording:
 1. Creating a figure (plt.subplots()) killed the Jupyter kernel with no Python error, while matplotlib imported cleanly and the same code ran without issue from the terminal. The fault was isolated by running matplotlib outside the notebook, which succeeded.
 2. RDKit's drawing module failed separately with ImportError: DLL load failed while importing rdMolDraw2D, despite rdkit and librdkit being matched conda-forge builds (2026.09.2). This indicates a missing system-level dependency rather than a version mismatch.
 3. As a result, figure generation and structure rendering currently run in separate conda environments. Resolving this to a single reproducible environment is outstanding.
 
-**References**
+## References
 1. Lipinski, C. A. et al. Adv. Drug Deliv. Rev. 1997, 23, 3–25.
 2. Veber, D. F. et al. J. Med. Chem. 2002, 45, 2615–2623.
 3. Tice, C. M. Pest Manag. Sci. 2001, 57, 3–16.
